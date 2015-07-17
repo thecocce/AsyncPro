@@ -52,11 +52,11 @@ uses
   Windows,
   SysUtils,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  Graphics,
   Messages,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  Controls,
+  StdCtrls,
+  Forms,
   OoMisc,
   AwFView,
   AdExcept,

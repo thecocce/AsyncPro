@@ -53,12 +53,12 @@ uses
   Windows,
   {$IFNDEF PrnDrv}
   Classes,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  Controls,
   ShellAPI,
-  {$if CompilerVersion >= 23}VCL.OleCtrls,{$else}OleCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  OleCtrls,
+  Forms,
   {$IFNDEF DrvInst}
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  Graphics,
   {$ENDIF}
   {$ENDIF}
   MMSystem,
@@ -1958,7 +1958,7 @@ type
     OutFile     : PBufferedOutputFile;{Output file}
     PadPage     : Bool;               {True to pad text conversion to full page}{!!.04}
     {$IFNDEF PrnDrv}
-    InBitmap    : {$if CompilerVersion >= 23}VCL.Graphics.TBitmap{$else}Graphics.TBitmap{$endif};
+    InBitmap    : Graphics.TBitmap;
     {$ENDIF}
   end;
 
@@ -2222,7 +2222,7 @@ type
     case Integer of
       0: (FontLoaded : Bool;                   {False until font loaded}
           FontPtr    : PByteArray);            {Pointer to the loaded font table}
-      1: (Bitmap     : {$if CompilerVersion >= 23}VCL.Graphics.TBitmap{$else}Graphics.TBitmap{$endif};{Memory bitmap for rendering text}
+      1: (Bitmap     : Graphics.TBitmap;       {Memory bitmap for rendering text}
           LineBytes  : Cardinal;               {Bytes per raster line}
           Offset     : Cardinal;               {Current offset in the bitmap}
           ImageSize  : Integer;                {Size of image structure}
@@ -2295,7 +2295,7 @@ type
   PBitmapFaxData = ^TBitmapFaxData;
   TBitmapFaxData = record
     BmpHandle       : HBitmap;
-    DataBitmap      : {$if CompilerVersion >= 23}VCL.Graphics.TBitmap{$else}Graphics.Bitmap{$endif};
+    DataBitmap      : Graphics.TBitmap;
     BytesPerLine    : Cardinal;
     Width           : Cardinal;
     NumLines        : Cardinal;
@@ -2768,9 +2768,7 @@ function GetPtr(P : Pointer; O : Integer) : Pointer;
 procedure NotBuffer(var Buf; Len : Cardinal);
 
 {$IFNDEF Win32}
-{$IFNDEF Win64}
 function Trim(const S : string) : string;
-{$ENDIF}
 {$ENDIF}
 
 function DelayMS(MS : Cardinal) : Cardinal;

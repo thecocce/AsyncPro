@@ -46,21 +46,16 @@ uses
   SysUtils,
   Messages,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$ifdef win32}
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
   DesignIntf,
   DesignEditors,
-  {$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls;{$else}StdCtrls;{$endif}
+  StdCtrls;
 
-{$ifdef win32}
 procedure Register;
-{$endif}
 
-{$ifdef win32}
 type
   {TAPI devices property editor}
   TSelectedDeviceProperty = class(TStringProperty)
@@ -68,7 +63,6 @@ type
     procedure Edit; override;
     function GetAttributes: TPropertyAttributes; override;
   end;
-  {$endif}
 
 implementation
 
@@ -76,17 +70,15 @@ uses
   AdTapi,
   AdTSel;
 
-{$ifdef win32}
 procedure Register;
 begin
   {Register property editors}
   RegisterPropertyEditor(TypeInfo(String), TApdCustomTapiDevice,
                          'SelectedDevice', TSelectedDeviceProperty);
 end;
-{$endif}
 
 {TSelectedDeviceProperty (editor)}
-{$ifdef win32}
+
   procedure TSelectedDeviceProperty.Edit;
   begin
     with (GetComponent(0) as TApdCustomTapiDevice) do
@@ -98,6 +90,5 @@ end;
   begin
     Result := [paDialog]
   end;
-  {$endif}
 
 end.

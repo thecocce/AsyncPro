@@ -38,20 +38,8 @@ unit AdMdmDlg;
 interface
 
 uses
-  Windows,
-  Messages,
-  SysUtils,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}{$endif}
-  OOMisc,
-  AdMdm,
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Buttons,{$else}Buttons,{$endif}
-  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.ImgList;{$else}ImgList,{$endif}
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  OOMisc, AdMdm, StdCtrls, Buttons, ExtCtrls, ImgList;
 
 type
   TApdModemStatusDialog = class(TForm)

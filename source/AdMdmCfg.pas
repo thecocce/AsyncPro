@@ -37,20 +37,9 @@ unit AdMdmCfg;
 interface
 
 uses
-  Windows,
-  Messages,
-  SysUtils,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.ComCtrls,{$else}ComCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
-  AdLibMdm,
-  AdMdm,
-  AdPort;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ComCtrls, ExtCtrls,
+  AdLibMdm, AdMdm, AdPort;
 
 
 type

@@ -127,7 +127,7 @@ uses
   SysUtils,
   Windows,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  Graphics,
   OOMisc;
 
 type

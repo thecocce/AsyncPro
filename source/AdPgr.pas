@@ -50,11 +50,11 @@ uses
   Messages,
   SysUtils,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
+  ExtCtrls,
   OoMisc,
   AdPort,
   AdExcept,

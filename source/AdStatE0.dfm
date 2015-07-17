@@ -1,16 +1,14 @@
 object frmConditionEdit: TfrmConditionEdit
   Left = 150
   Top = 123
+  Width = 283
+  Height = 430
   Caption = 'Condition editor'
-  ClientHeight = 392
-  ClientWidth = 267
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -48,7 +46,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 39
       Height = 13
       Caption = 'Caption:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -61,7 +58,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 27
       Height = 13
       Caption = 'Color:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -74,7 +70,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 31
       Height = 13
       Caption = 'Width:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -86,7 +81,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 16
       Width = 161
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -101,7 +95,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 145
       Height = 19
       Style = csOwnerDrawFixed
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -116,7 +109,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 64
       Width = 45
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -139,7 +131,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 53
       Height = 13
       Caption = 'Start string:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -152,7 +143,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 47
       Height = 13
       Caption = 'End string'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -165,7 +155,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 58
       Height = 13
       Caption = 'Packet size:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -178,7 +167,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 41
       Height = 13
       Caption = 'Timeout:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -191,7 +179,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 51
       Height = 13
       Caption = 'Next state:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -204,7 +191,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 52
       Height = 13
       Caption = 'Error code:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -217,7 +203,6 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 77
       Height = 13
       Caption = 'Activate Output:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -229,7 +214,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 16
       Width = 161
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -243,7 +227,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 39
       Width = 161
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -257,7 +240,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 85
       Width = 45
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -271,7 +253,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 109
       Width = 45
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -286,11 +267,11 @@ object frmConditionEdit: TfrmConditionEdit
       Width = 145
       Height = 21
       Style = csDropDownList
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
       Font.Style = []
+      ItemHeight = 13
       ParentFont = False
       TabOrder = 6
       OnDrawItem = cbxColorDrawItem
@@ -302,7 +283,6 @@ object frmConditionEdit: TfrmConditionEdit
       Height = 17
       Alignment = taLeftJustify
       Caption = 'Ignore case:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -315,7 +295,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 132
       Width = 121
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -331,7 +310,6 @@ object frmConditionEdit: TfrmConditionEdit
       Height = 17
       Alignment = taLeftJustify
       Caption = 'Default Next:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -346,7 +324,6 @@ object frmConditionEdit: TfrmConditionEdit
       Height = 17
       Alignment = taLeftJustify
       Caption = 'Default Error:'
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -359,7 +336,6 @@ object frmConditionEdit: TfrmConditionEdit
       Top = 228
       Width = 162
       Height = 21
-      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'

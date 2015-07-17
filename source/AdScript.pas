@@ -46,15 +46,8 @@ interface
 
 uses
   {-----RTL}
-  SysUtils,
-  Windows,
-  Messages,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  ShellAPI,
+  SysUtils, Windows, Messages, Classes, Graphics, Controls,
+  Forms, Dialogs, ShellAPI,
   {-----APD}
   OoMisc,
   AdExcept,

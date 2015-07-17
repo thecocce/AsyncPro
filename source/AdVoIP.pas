@@ -52,15 +52,8 @@ unit AdVoIP;
 interface
 
 uses
-  {$if CompilerVersion >= 23}VCL.OleServer,{$else}OleServer,{$endif}
-  SysUtils,
-  ActiveX,
-  Classes,
-  Windows,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  ComObj,
-  Messages,
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  OleServer,
+  SysUtils, ActiveX, Classes, Windows, Controls, ComObj, Messages, Forms,
   { APRO units }
   OOMisc,
   AdExcept,

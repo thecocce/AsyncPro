@@ -265,8 +265,10 @@ object PacketEditor: TPacketEditor
     Height = 25
     Caption = 'OK'
     Default = True
+    DoubleBuffered = True
     ModalResult = 1
     NumGlyphs = 2
+    ParentDoubleBuffered = False
     TabOrder = 3
   end
   object BitBtn2: TBitBtn
@@ -276,8 +278,10 @@ object PacketEditor: TPacketEditor
     Height = 25
     Cancel = True
     Caption = 'Cancel'
+    DoubleBuffered = True
     ModalResult = 2
     NumGlyphs = 2
+    ParentDoubleBuffered = False
     TabOrder = 4
   end
 end

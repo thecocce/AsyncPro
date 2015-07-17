@@ -39,18 +39,9 @@ unit AdXLbMdm;
 interface
 
 uses
-  SysUtils,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
-  OOMisc,
-  AdXBase,
-  AdXParsr,
-  AdExcept,
-  AdLibMdm;
+  SysUtils, Classes, Controls, Forms, Dialogs,
+  StdCtrls, ExtCtrls,
+  OOMisc, AdXBase, AdXParsr, AdExcept, AdLibMdm;
 
 type
   TApdModemCapDetail = class(TApdBaseComponent)

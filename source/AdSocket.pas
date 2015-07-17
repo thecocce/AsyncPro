@@ -49,7 +49,7 @@ uses
   Messages,
   SysUtils,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  Forms,
   OOMisc,
   AdWUtil;
 

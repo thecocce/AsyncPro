@@ -1,16 +1,13 @@
 object VoipAudioVideoEditor: TVoipAudioVideoEditor
   Left = 200
   Top = 138
+  Width = 329
+  Height = 212
   Caption = 'Voice Over IP Options'
-  ClientHeight = 174
-  ClientWidth = 313
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
@@ -66,6 +63,7 @@ object VoipAudioVideoEditor: TVoipAudioVideoEditor
       Width = 195
       Height = 21
       Style = csDropDownList
+      ItemHeight = 13
       TabOrder = 0
     end
     object cboxAudioOut: TComboBox
@@ -74,6 +72,7 @@ object VoipAudioVideoEditor: TVoipAudioVideoEditor
       Width = 195
       Height = 21
       Style = csDropDownList
+      ItemHeight = 13
       TabOrder = 1
     end
     object cboxVideoIn: TComboBox
@@ -82,6 +81,7 @@ object VoipAudioVideoEditor: TVoipAudioVideoEditor
       Width = 195
       Height = 21
       Style = csDropDownList
+      ItemHeight = 13
       TabOrder = 2
     end
     object cboxVideoPlayback: TCheckBox

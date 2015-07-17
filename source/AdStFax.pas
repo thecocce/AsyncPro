@@ -41,7 +41,7 @@ uses
   Messages,
   SysUtils,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  Graphics,
   AdStSt,
   OoMisc,
   AdFax;

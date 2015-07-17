@@ -57,9 +57,9 @@ uses
   SysUtils,
   Classes,
   Messages,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  Controls,
+  Graphics,
+  Forms,
   OoMisc,
   AwUser,
   AwAbsFax,

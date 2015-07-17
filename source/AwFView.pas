@@ -303,7 +303,6 @@ implementation
   end;
 
   procedure ExchangeInts(var I, J : Integer); assembler; register;
-  {$ifndef CPUX64}
   asm
     push  ebx
     mov   ebx,[eax]
@@ -312,14 +311,6 @@ implementation
     mov   [eax],ecx
     pop   ebx
   end;
-  {$else}
-  asm
-    mov   r8d,[rcx]
-    mov   eax,[rdx]
-    mov   [rdx],r8d
-    mov   [rcx],eax
-  end;
-  {$endif}
 
 {******************************************************************************}
 
@@ -875,7 +866,7 @@ implementation
   begin
     if (vImage = nil) then
       Exit;
-    if InVInitPage then
+    if InVInitPage then 
       Exit;
     if (vNumPages = 1) or (vOnPage = vNumPages) then begin
       vHomeVertical;
@@ -887,7 +878,6 @@ implementation
   end;
 
   procedure ReverseBits(Dest, Src : Pointer; L : Cardinal); register; assembler;
-  {$ifndef CPUX64}
   asm
     push  esi
     push  edi
@@ -956,81 +946,8 @@ implementation
     pop   edi
     pop   esi
   end;
-  {$else}
-  asm
-    push  rsi
-    push  rdi
-    push  rbx
-    mov   rcx,rax
-    mov   rcx,r8
-
-    mov   rsi,rdx         {ESI->Src}
-    mov   rdi,rax         {ESI->Dest}
-    add   rdi,rcx         {point EDI to end of destination}
-    dec   rdi
-    dec   rdi
-    shr   ecx,1           {count words, not bytes}
-
-@1: mov   ax,[rsi]
-    inc   rsi
-    inc   rsi
-    mov   edx,eax
-    mov   ah,al
-    mov   al,dh
-
-@2:
-    {put reverse of AL in AH}
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-    shr   ax,1
-    rcl   bx,1
-
-    mov   eax,ebx
-    mov   edx,eax
-    mov   ah,al
-    mov   al,dh
-    mov   [rdi],ax
-    dec   rdi
-    dec   rdi
-    dec   ecx
-    jnz   @1
-
-    pop   rbx
-    pop   rdi
-    pop   rsi
-  end;
-  {$endif}
 
   procedure BitBltRot90(Dest, Src : Pointer; Bit, BytesPerRow, Len : Cardinal); assembler; register;
-  {$ifndef CPUX64}
   asm
     push  ebx
     push  esi
@@ -1155,154 +1072,8 @@ implementation
     pop   esi
     pop   ebx
   end;
-  {$else}
-  asm
-    push  rbx
-    push  rsi
-    push  rdi
-    mov   rax,rcx
-    mov   rcx,r8
-
-    inc   ecx             {increment bit offset}
-    mov   rsi,rax         {ESI->Dest}
-    mov   rdi,rdx         {EDI->Src}
-    mov   ebx,Len         {EBX = loop counter}
-    shr   ebx,1
-
-@1: mov   ax,[rdi]        {data in AX}
-    inc   rdi
-    inc   rdi
-
-    push  rbx             {do this in lieu of xchg, because this is faster}
-    mov   bx,ax
-    mov   ah,al
-    mov   al,bh
-    pop   rbx
-
-    xor   dl,dl           {clear DL}
-    shl   ax,1            {get the next bit out of AX}
-    rcr   dl,cl           {rotate the next bit into position in DL for ORing}
-    or    [rsi],dl        {or the new data into the destination}
-    mov   r10d, BytesPerRow
-    add   rsi,r10 {find the next line}
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   R10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   R10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   R10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    add   rsi,r10
-
-    dec   ebx             {decrement counter}
-    jnz   @1              {any data left? jump if so}
-
-    pop   rdi
-    pop   rsi
-    pop   rbx
-  end;
-  {$endif}
-
 
   procedure BitBltRot270(Dest, Src : Pointer; Bit, BytesPerRow, Len : Cardinal); assembler; register;
-  {$ifndef CPUX64}
   asm
     push  ebx
     push  esi
@@ -1427,150 +1198,6 @@ implementation
     pop   esi
     pop   ebx
   end;
-  {$else}
-  asm
-    push  rbx
-    push  rsi
-    push  rdi
-    mov   rax,rcx
-    mov   rcx,r8
-
-    inc   ecx             {increment bit offset}
-    mov   rsi,rax         {ESI->Dest}
-    mov   rdi,rdx         {EDI->Src}
-    mov   ebx,Len         {EBX = loop counter}
-    shr   ebx,1
-
-@1: mov   ax,[rdi]        {data in AX}
-    inc   rdi
-    inc   rdi
-
-    push  rbx             {do this in lieu of xchg, because this is faster}
-    mov   bx,ax
-    mov   ah,al
-    mov   al,bh
-    pop   rbx
-
-    xor   dl,dl           {clear DL}
-    shl   ax,1            {get the next bit out of AX}
-    rcr   dl,cl           {rotate the next bit into position in DL for ORing}
-    or    [rsi],dl        {or the new data into the destination}
-    mov   r10d, BytesPerRow
-    sub   rsi,r10 {find the next line}
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    xor   dl,dl
-    shl   ax,1
-    rcr   dl,cl
-    or    [rsi],dl
-    mov   r10d, BytesPerRow
-    sub   rsi,r10
-
-    dec   ebx             {decrement counter}
-    jnz   @1              {any data left? jump if so}
-
-    pop   rdi
-    pop   rsi
-    pop   rbx
-  end;
-  {$endif}
 
   function TViewer.vRotatePage(const PageNum, Direction : Cardinal) : Integer;
     {-Rotate a page}
@@ -2352,39 +1979,20 @@ implementation
   end;
 
   function MaxCard(C1, C2 : Cardinal) : Cardinal; assembler;
-  {$ifndef CPUX64}
   asm
     cmp   eax,edx
     jae   @1
     mov   eax,edx
 @1:
   end;
-  {$else}
-  asm
-    sub   ecx,edx
-    sbb   eax,eax
-    not   eax
-    and   eax,ecx
-    add   eax,edx
-  end;
-  {$endif}
 
   function MinCard(C1, C2 : Cardinal) : Cardinal; assembler;
-  {$ifndef CPUX64}
   asm
     cmp   eax,edx
     jbe   @1
     mov   eax,edx
 @1:
   end;
-  {$else}
-  asm
-    sub   ecx,edx
-    sbb   eax,eax
-    and   eax,ecx
-    add   eax,edx
-  end;
-  {$endif}
 
   function TViewer.apwViewSelect(R : PRect) : Integer;
     {-Select a portion of fax image}

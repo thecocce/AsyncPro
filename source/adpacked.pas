@@ -42,12 +42,12 @@ uses
   Messages,
   SysUtils,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Buttons,{$else}Buttons,{$endif}
+  Graphics,
+  Controls,
+  Forms,
+  Dialogs,
+  StdCtrls,
+  Buttons,
   AdPacket;
 
 type

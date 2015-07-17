@@ -1,17 +1,15 @@
 object ApdModemConfigDialog: TApdModemConfigDialog
   Left = 264
   Top = 124
+  Width = 475
+  Height = 354
   ActiveControl = btnOK
   Caption = 'Modem Configuration'
-  ClientHeight = 316
-  ClientWidth = 459
   Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   object btnOK: TButton
@@ -37,7 +35,7 @@ object ApdModemConfigDialog: TApdModemConfigDialog
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 459
+    Width = 467
     Height = 290
     ActivePage = TabSheet3
     Align = alTop
@@ -106,8 +104,15 @@ object ApdModemConfigDialog: TApdModemConfigDialog
           Width = 161
           Height = 25
           Max = 2
+          Orientation = trHorizontal
           PageSize = 1
+          Frequency = 1
+          Position = 0
+          SelEnd = 0
+          SelStart = 0
           TabOrder = 1
+          TickMarks = tmBottomRight
+          TickStyle = tsAuto
         end
         object rbSpeakerConnect: TRadioButton
           Left = 134

@@ -37,17 +37,8 @@ unit AdStatEd;
 interface
 
 uses
-  Windows,
-  Messages,
-  SysUtils,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.Grids,{$else}Grids,{$endif}
-  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
-  AdStMach;
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, StdCtrls, AdStMach;
 
 type
   TApdStringGrid = class(TStringGrid)

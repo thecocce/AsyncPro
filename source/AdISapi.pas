@@ -44,9 +44,9 @@ interface
 uses                         
   ActiveX,
   Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.OleCtrls,{$else}OleCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.OleServer,{$else}OleServer,{$endif}
+  Graphics,
+  OleCtrls,
+  OleServer,
   StdVCL,
   Variants,
   Windows,

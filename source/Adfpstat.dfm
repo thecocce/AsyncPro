@@ -23,8 +23,10 @@ object StandardFaxPrinterStatusDisplay: TStandardFaxPrinterStatusDisplay
     Width = 75
     Height = 27
     Caption = 'Abort'
+    DoubleBuffered = True
     ModalResult = 3
     NumGlyphs = 2
+    ParentDoubleBuffered = False
     TabOrder = 0
     OnClick = fpsAbortButtonClick
   end

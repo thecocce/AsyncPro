@@ -39,8 +39,8 @@ interface
 
 uses
   Windows,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  Graphics,
+  Controls,
   SysUtils,
   Classes,
   OOMisc,

@@ -60,7 +60,7 @@ uses
   Variants,
   ActiveX,
   ComObj,
-  {$if CompilerVersion >= 23}VCL.Dialogs;{$else}Dialogs;{$endif}
+  Dialogs;
 
 const
   ApdSapiAskOperator = WPARAM(-3);
@@ -2088,7 +2088,7 @@ procedure TApdCustomSapiPhone.DoLineCallState (Device, P1, P2, P3 : Integer);
           WaveID.dwSize := SizeOf (TWaveFormatEx);
           FSapiEngine.CheckError (IAT.WaveFormatSet (WaveID));
           FSapiEngine.CheckError (IAT.AudioObject (IAMM));
-          FSapiEngine.DirectSR.InitAudioSourceObject (NativeUInt (IAT));
+          FSapiEngine.DirectSR.InitAudioSourceObject (DWORD (IAT));
         except
           on E:EOleException do begin
             FSapiEngine.CheckError (E.ErrorCode);

@@ -51,7 +51,7 @@ interface
 
 uses
   Windows,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  Graphics,
   Messages,
   SysUtils,
   Classes,
@@ -489,10 +489,7 @@ end;
 
   function RotateByte(Code : AnsiChar) : Byte; assembler; register;
     {-Flip code MSB for LSB}
-
-  {$ifndef CPUX64}
   asm
-    //code = al
     mov dl,al
     xor eax,eax
     mov ecx,8
@@ -500,17 +497,6 @@ end;
     rcl al,1
     loop @1
   end;
-  {$else}
-  asm
-    //code = cl
-    mov dl,cl
-    xor eax,eax
-    mov ecx,8
-@1: shr dl,1
-    rcl al,1
-    loop @1
-  end;
-  {$endif}
 
   procedure Merge(var S : TModemResponse; C : AnsiChar);
     {-appends C to S, shifting S if it gets too long}

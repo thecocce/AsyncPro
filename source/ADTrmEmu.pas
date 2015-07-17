@@ -77,23 +77,11 @@ unit ADTrmEmu;
 interface
 
 uses
-  Windows,
-  Messages,
-  SysUtils,
-  Classes,
-  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
-  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
-  {$if CompilerVersion >= 23}VCL.ClipBrd,{$else}ClipBrd,{$endif}
-  {$if CompilerVersion >= 23}VCL.Menus,{$else}Menus,{$endif}
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, ExtCtrls,
+  Forms, Dialogs, ClipBrd, Menus,
   OOMisc,
-  ADPort,
-  ADExcept,
-  ADTrmPsr,
-  ADTrmMap,
-  ADTrmBuf;
+  ADPort, ADExcept,
+  ADTrmPsr, ADTrmMap, ADTrmBuf;
 
 type
   TAdCharSource = (csUnknown, csKeyboard, csPort, csWriteChar);        {!!.04}

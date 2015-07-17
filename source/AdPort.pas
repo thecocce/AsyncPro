@@ -68,8 +68,8 @@ uses
   SysUtils,
   Classes,
   Messages,
-  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
-  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  Controls,
+  Forms,
   OoMisc,
   AwUser,
 {$IFNDEF UseAwWin32}
