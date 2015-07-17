@@ -46,17 +46,17 @@ uses
   SysUtils,
   Classes,
   Messages,
-  Graphics,
-  Controls,
-  Forms,
-  Dialogs,
-  StdCtrls,
-  ExtCtrls,
-  Buttons,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
+  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Buttons,{$else}Buttons,{$endif}
   OoMisc,
   AwUser,
 {$IFNDEF UseAwWin32}
-  LnsWin32;
+  LnsWin32;//, Vcl.StdCtrls;
 {$ELSE}
   AwWin32;
 {$ENDIF}

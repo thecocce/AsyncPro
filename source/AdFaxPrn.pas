@@ -53,10 +53,10 @@ uses
   Windows,
   SysUtils,
   Classes,
-  Graphics,
-  Forms,
-  Dialogs,
-  Printers,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$if CompilerVersion >= 23}VCL.Printers,{$else}Printers,{$endif}
   ooMisc,
   AdFaxCvt;
 

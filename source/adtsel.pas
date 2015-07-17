@@ -46,23 +46,23 @@ uses
   Messages,
   SysUtils,
   Classes,
-  Controls,
-  Forms,
-  Dialogs,
-  StdCtrls,
-  Buttons,
-  AwUser,                                                         
+  //{$if CompilerVersion >= 23}VCL.Controls,{$else}{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Buttons,{$else}Buttons,{$endif}
+  AwUser,
   AdPort,
   AdExcept,
   AdTUtil,
   OOMisc,
   AdSelCom,
-{$IFNDEF UseAwWin32}
-  LnsWin32;
+{$IFDEF UseAwWin32}
+  AwWin32
 {$ELSE}
-  AwWin32;
+  LnsWin32, Vcl.Controls//, Vcl.Controls//, Vcl.Controls
 {$ENDIF}
-
+ ;
 type
   TDeviceSelectionForm = class(TForm)
     dsfComboBox    : TComboBox;

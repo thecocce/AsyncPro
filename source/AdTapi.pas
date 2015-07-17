@@ -72,11 +72,11 @@ uses
   Registry,
   Classes,
   Messages,
-  Controls,
-  Forms,
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
   Variants,
-  ExtCtrls,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.ExtCtrls,{$else}ExtCtrls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   MMSystem,
   SysUtils,
   AdTUtil,

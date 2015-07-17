@@ -35,10 +35,8 @@ object DeviceSelectionForm: TDeviceSelectionForm
     Height = 27
     Caption = 'OK'
     Default = True
-    DoubleBuffered = True
     ModalResult = 1
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 0
     OnClick = dsfOkBitBtnClick
   end
@@ -49,10 +47,8 @@ object DeviceSelectionForm: TDeviceSelectionForm
     Height = 27
     Cancel = True
     Caption = 'Cancel'
-    DoubleBuffered = True
     ModalResult = 2
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 1
     OnClick = dsfCancelBitBtnClick
   end

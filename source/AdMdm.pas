@@ -37,8 +37,20 @@ unit AdMdm;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  OOMisc, AdPort, AdPacket, AdLibMdm, AdExcept, FileCtrl;
+  Windows,
+  Messages,
+  SysUtils,
+  Classes,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  OOMisc,
+  AdPort,
+  AdPacket,
+  AdLibMdm,
+  AdExcept,
+  {$if CompilerVersion >= 23}VCL.FileCtrl;{$else}FileCtrl;{$endif}
 
 const
   ApxDefModemCapFolder = '';                                             {!!.04}

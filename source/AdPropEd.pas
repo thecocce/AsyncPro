@@ -43,13 +43,16 @@ interface
 
 uses
   Classes,
-  Controls,
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$ifdef Win32}
   DesignIntf,
   DesignEditors,
-  Forms,
+  {$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
   OoMisc,
   AdAbout;
 
+{$ifdef win32}
 procedure Register;
 
 type
@@ -128,15 +131,16 @@ type
     function GetAttributes: TPropertyAttributes; override;
     procedure Edit; override;
   end;
+{$endif}
 
 implementation
 
 uses
   SysUtils,
   Windows,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   TypInfo,
-  FileCtrl,
+  {$if CompilerVersion >= 23}VCL.FileCtrl,{$else}FileCtrl,{$endif}
   AdFax,
   AdFaxCtl,
   AdFaxCvt,
@@ -160,6 +164,7 @@ uses
   AdVoip,
   AdVoipEd;
 
+{$ifdef win32}
 procedure Register;
 begin
   { register our Version property editors }
@@ -275,9 +280,11 @@ begin
   { component editors }
   RegisterComponentEditor(TApdDataPacket, TApdPacketEditor);
   RegisterComponentEditor(TApdCustomState, TApdStateEditor);
-  RegisterComponentEditor(TApdCustomVoip, TapdVoipAudioVideoEditor); 
+  RegisterComponentEditor(TApdCustomVoip, TapdVoipAudioVideoEditor);
 end;
+{$endif}
 
+{$ifdef win32}
 function TApdValidEnumProperty.GetAttributes: TPropertyAttributes;
 begin
   Result := [paMultiSelect, paValueList];
@@ -309,9 +316,11 @@ procedure TApdPacketStringProperty.SetValue(const Value: string);
 begin
   inherited SetValue(CtrlStrToStr(Value));
 end;
+{$endif}
 
 {*** TApdPacketEditor ***}
 
+{$ifdef win32}
 procedure TApdPacketEditor.ExecuteVerb(Index: Integer);
 begin
   if EditPacket(Component as TApdDataPacket,Component.Name) then
@@ -327,9 +336,11 @@ function TApdPacketEditor.GetVerbCount: Integer;
 begin
   Result := 1;
 end;
+{$endif}
 
 {*** TApdVersionProperty ***}
 
+{$ifdef win32}
 function TApdVersionProperty.GetAttributes: TPropertyAttributes;
 begin
   Result := [paDialog, paReadOnly];
@@ -345,9 +356,11 @@ begin
     end;
   end;
 end;
+{$endif}
 
 {*** TApdStateEditor ***}
 
+{$ifdef win32}
 procedure TApdStateEditor.ExecuteVerb(Index: Integer);
 begin
   if EditState(Component as TApdCustomState,Component.Name) then
@@ -363,9 +376,11 @@ function TApdStateEditor.GetVerbCount: Integer;
 begin
   Result := 1;
 end;
+{$endif}
 
 {*** TApdGenericFileNameProperty ***}
 
+{$ifdef win32}
 function TApdGenericFileNameProperty.GetAttributes: TPropertyAttributes;
 begin
   Result := [paDialog];
@@ -423,7 +438,9 @@ begin
     Dlg.Free;
   end;
 end;
+{$endif}
 
+{$ifdef win32}
 { TApdDirectoryProperty }
 function TApdDirectoryProperty.GetAttributes: TPropertyAttributes;
 begin
@@ -473,5 +490,6 @@ begin
 //    Modified;
   end;
 end;
+{$endif}
 
 end.

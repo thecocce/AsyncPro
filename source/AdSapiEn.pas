@@ -66,19 +66,19 @@ uses
   Windows,
   ActiveX,
   Classes,
-  Graphics,
-  OleServer,
-  OleCtrls,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.OleServer,{$else}OleServer,{$endif}
+  {$if CompilerVersion >= 23}VCL.OleCtrls,{$else}OleCtrls,{$endif}
   StdVCL,
   SysUtils,
-  Controls,
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
   OoMisc,
   AdISapi,
   AdSapiGr,
   Contnrs,
   Messages,
-  Forms,
-  Dialogs,  
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   AdExcept,
   ComObj;
 
