@@ -54,7 +54,7 @@ uses
   Classes,
   Messages,
   SysUtils,
-  Forms,
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
   OoMisc,
   AwUser,
   AdSocket,

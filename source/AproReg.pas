@@ -40,9 +40,11 @@ unit APROReg;
 
 interface
 
+{$ifdef Win32}
 uses
   DesignIntf,
   DesignEditors;
+{$endif}
 
 { Constant declarations for IDE palette tab names }
 

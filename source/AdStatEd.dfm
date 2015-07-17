@@ -1,14 +1,16 @@
 object frmStateEdit: TfrmStateEdit
   Left = 367
   Top = 82
-  Width = 562
-  Height = 259
   Caption = 'State editor'
+  ClientHeight = 221
+  ClientWidth = 546
   Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -21,6 +23,7 @@ object frmStateEdit: TfrmStateEdit
     Width = 535
     Height = 186
     Caption = ' Conditions '
+    Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
     Font.Name = 'MS Sans Serif'
@@ -33,6 +36,7 @@ object frmStateEdit: TfrmStateEdit
       Width = 75
       Height = 25
       Caption = 'Add'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -47,6 +51,7 @@ object frmStateEdit: TfrmStateEdit
       Width = 75
       Height = 25
       Caption = 'Edit'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'
@@ -61,6 +66,7 @@ object frmStateEdit: TfrmStateEdit
       Width = 75
       Height = 25
       Caption = 'Delete'
+      Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
       Font.Name = 'MS Sans Serif'

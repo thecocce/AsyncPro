@@ -6,7 +6,6 @@ object ApdModemSelectionDialog: TApdModemSelectionDialog
   HorzScrollBar.Range = 291
   VertScrollBar.Range = 121
   ActiveControl = cbxManufacturer
-  AutoScroll = False
   Caption = 'Modem selection'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -68,7 +67,6 @@ object ApdModemSelectionDialog: TApdModemSelectionDialog
     Width = 193
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     Sorted = True
     TabOrder = 1
     OnChange = cbxManufacturerSelect
@@ -79,7 +77,6 @@ object ApdModemSelectionDialog: TApdModemSelectionDialog
     Width = 193
     Height = 21
     Style = csDropDownList
-    ItemHeight = 13
     Sorted = True
     TabOrder = 2
     OnChange = cbxNameChange

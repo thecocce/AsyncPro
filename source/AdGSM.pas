@@ -69,8 +69,16 @@ unit adgsm;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Controls, Forms,
-  OoMisc, AdPort, AdPacket, AdExcept;
+  Windows,
+  Messages,
+  SysUtils,
+  Classes,
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  OoMisc,
+  AdPort,
+  AdPacket,
+  AdExcept;
 
 const
   ApdGSMResponse = WM_USER + 100;

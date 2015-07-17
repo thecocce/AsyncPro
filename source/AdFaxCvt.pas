@@ -46,14 +46,14 @@ interface
 
 uses
   Windows,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   SysUtils,
   Classes,
-  Graphics,
-  Printers,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Printers,{$else}Printers,{$endif}
   Messages,
   ShellAPI,
-  Forms,
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
   Registry,
   IniFiles,
   OoMisc,
