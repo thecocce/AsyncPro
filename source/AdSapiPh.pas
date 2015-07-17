@@ -2047,6 +2047,11 @@ begin
   end;
 end;
 
+{$ifdef win32}
+type
+  NativeUInt = DWORD;
+{$endif}
+
 procedure TApdCustomSapiPhone.DoLineCallState (Device, P1, P2, P3 : Integer);
 
   procedure AssignWaveInDevice;
