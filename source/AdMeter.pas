@@ -47,11 +47,11 @@ uses
   Messages,
   SysUtils,
   Classes,
-  Graphics,
-  Controls,
-  Forms,
-  Menus,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Menus,{$else}Menus,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   OoMisc;
 
 const

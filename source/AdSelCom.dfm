@@ -44,10 +44,8 @@ object ComSelectForm: TComSelectForm
     Height = 27
     Caption = 'OK'
     Default = True
-    DoubleBuffered = True
     ModalResult = 1
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 0
   end
   object AbortBtn: TBitBtn
@@ -56,10 +54,8 @@ object ComSelectForm: TComSelectForm
     Width = 85
     Height = 27
     Caption = 'Cancel'
-    DoubleBuffered = True
     ModalResult = 3
     NumGlyphs = 2
-    ParentDoubleBuffered = False
     TabOrder = 1
   end
   object PortsComboBox: TComboBox
@@ -68,7 +64,6 @@ object ComSelectForm: TComSelectForm
     Width = 201
     Height = 21
     Style = csDropDownList
-    ItemHeight = 0
     TabOrder = 2
   end
 end

@@ -45,13 +45,15 @@ uses
   SysUtils,
   Messages,
   Classes,
-  Graphics,
-  Controls,
-  Forms,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$ifdef win32}
   DesignIntf,
   DesignEditors,
-  StdCtrls;
+  {$endif}
+  {$if CompilerVersion >= 23}VCL.StdCtrls;{$else}StdCtrls;{$endif}
 
 type
   TAdPEdit = class(TForm)
@@ -63,11 +65,13 @@ type
   end;
 
   {Baud rate property editor}
+  {$ifdef win32}
   TBaudRateProperty = class(TIntegerProperty)
   public
     procedure Edit; override;
     function GetAttributes: TPropertyAttributes; override;
   end;
+  {$endif}
 
 var
   AdPEdit: TAdPEdit;
@@ -88,6 +92,7 @@ end;
 
 {TBaudRateProperty (editor)}
 
+  {$ifdef win32}
   procedure TBaudRateProperty.Edit;
   var
     BRE : TAdPEdit;
@@ -107,6 +112,7 @@ end;
   begin
     Result := [paDialog]
   end;
+  {$endif}
 
 end.
 

@@ -156,7 +156,7 @@ uses
   SysUtils,
   Windows,
   Classes,
-  Graphics,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
   OOMisc, AdExcept;
 
 const

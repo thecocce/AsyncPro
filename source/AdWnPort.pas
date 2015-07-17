@@ -53,7 +53,7 @@ uses
   Messages,
   SysUtils,
   Classes,
-  Forms,
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
   Windows,
   OoMisc,
   AwUser,

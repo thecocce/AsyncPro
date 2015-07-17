@@ -97,7 +97,6 @@ object ApdModemStatusDialog: TApdModemStatusDialog
       Top = 56
       Width = 20
       Height = 20
-      DoubleBuffered = True
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         0400000000000001000000000000000000001000000010000000000000000000
@@ -112,7 +111,6 @@ object ApdModemStatusDialog: TApdModemStatusDialog
         3333333333090333333333333309033333333333330903333333333333303333
         3333333333090333333333333330333333333333330003333333}
       NumGlyphs = 2
-      ParentDoubleBuffered = False
       TabOrder = 0
       OnClick = btnDetailClick
     end

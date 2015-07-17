@@ -46,14 +46,14 @@ uses
   Messages,
   SysUtils,
   Classes,
-  Graphics,
-  Controls,
-  Forms,
-  Dialogs,
-  StdCtrls,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCtrls,{$endif}
   OoMisc,
   AdRas,
-  ExtCtrls;
+  {$if CompilerVersion >= 23}VCL.ExtCtrls;{$else}ExtCtrls;{$endif}
 
 
 type {Status display}

@@ -60,10 +60,10 @@ uses
   Messages,
   SysUtils,
   Classes,
-  Graphics,
-  Controls,
-  Forms,
-  Dialogs,
+  {$if CompilerVersion >= 23}VCL.Graphics,{$else}Graphics,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
   OoMisc,
   AdExcept,
   AdPort,

@@ -43,12 +43,12 @@ uses
   Windows,
   SysUtils,
   Classes,
-  Forms,
-  Controls,
-  StdCtrls,
-  Dialogs,
-  Buttons,
-  AdFaxPrn;
+  {$if CompilerVersion >= 23}VCL.Forms,{$else}Forms,{$endif}
+  {$if CompilerVersion >= 23}VCL.Controls,{$else}Controls,{$endif}
+  //{$if CompilerVersion >= 23}VCL.StdCtrls,{$else}StdCrtrls,{$endif}
+  {$if CompilerVersion >= 23}VCL.Dialogs,{$else}Dialogs,{$endif}
+  {$if CompilerVersion >= 23}VCL.Buttons,{$else}Buttons,{$endif}
+  AdFaxPrn, Vcl.StdCtrls;
 
 type
   TStandardFaxPrinterStatusDisplay = class(TForm)
